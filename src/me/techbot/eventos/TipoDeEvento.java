@@ -34,6 +34,18 @@ public class TipoDeEvento implements Persistable {
     public String toString() {
         return this.getNome();
     }
+
+    public boolean equals(Object o) {
+        
+        boolean result = false;
+        
+        if ( o instanceof TipoDeEvento ) {
+            TipoDeEvento t = (TipoDeEvento) o;
+            result = t.getNome().equals( this.getNome() );
+        }
+        
+        return result;
+    }
     
     
     

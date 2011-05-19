@@ -51,6 +51,7 @@ public class HomeForm extends ApplicationForm implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         if (ae.getSource() == this.eventos) {
+            new BuscarEventosForm(this.getMidlet());
             return;
         }
 
@@ -60,6 +61,7 @@ public class HomeForm extends ApplicationForm implements ActionListener {
         }
 
         if (ae.getSource() == this.organizadores) {
+            new OrganizadoresList(this.getMidlet());
             return;
         }
 

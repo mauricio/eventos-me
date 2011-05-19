@@ -10,6 +10,9 @@ import com.sun.lwuit.plaf.UIManager;
 import com.sun.lwuit.util.Resources;
 import java.io.IOException;
 import javax.microedition.midlet.*;
+import me.techbot.eventos.gui.utils.Fixtures;
+import net.sourceforge.floggy.persistence.FloggyException;
+import net.sourceforge.floggy.persistence.PersistableManager;
 
 /**
  * @author mauricio
@@ -23,6 +26,8 @@ public class HomeMidlet extends MIDlet {
     public void startApp() {
         Display.init(this);
 
+        Fixtures.load();
+        
         try {
             Resources r = Resources.open("/tema.res");
             UIManager.getInstance().setThemeProps(r.getTheme("businessTheme"));
@@ -40,5 +45,11 @@ public class HomeMidlet extends MIDlet {
     }
 
     public void destroyApp(boolean unconditional) {
+        try {
+            PersistableManager.getInstance().shutdown();
+        } catch (FloggyException ex) {
+            ex.printStackTrace();
+            throw new RuntimeException(ex.getMessage());
+        }
     }
 }

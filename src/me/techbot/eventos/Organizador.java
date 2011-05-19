@@ -43,6 +43,21 @@ public class Organizador implements Persistable {
     public void setRamo(String ramo) {
         this.ramo = ramo;
     }
+
+    public boolean equals(Object o) {
+        
+        boolean result = false;
+        
+        if ( o instanceof Organizador ) {
+         
+            Organizador organizador = (Organizador) o;
+            result = this.getNome().equals( organizador.getNome() );
+            
+        }
+        
+        return result;
+        
+    }
     
     
     
