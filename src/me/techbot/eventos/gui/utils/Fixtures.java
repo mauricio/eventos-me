@@ -37,13 +37,13 @@ public class Fixtures {
         Evento evento1 = new Evento();
         evento1.setNome( "RailsConf" );
         evento1.setDataDeInicio( Utils.toDate(2011, 5, 17) );
-        evento1.setDataDeTermino( Utils.toDate(2011, 5, 20) );
+        evento1.setDataDeTermino( Utils.toDate(2011, 11, 20) );
         evento1.setOrganizador(organizador1);
         evento1.setTipoDeEvento(tipoDeEvento1);
 
         Evento evento2 = new Evento();
-        evento2.setDataDeInicio( Utils.toDate(2011, 9, 17) );
-        evento2.setDataDeTermino( Utils.toDate(2011, 9, 20) );
+        evento2.setDataDeInicio( Utils.toDate(2011, 8, 17) );
+        evento2.setDataDeTermino( Utils.toDate(2011, 11, 20) );
         evento2.setNome( "QCon" );
         evento2.setOrganizador(organizador2);
         evento2.setTipoDeEvento(tipoDeEvento2);        

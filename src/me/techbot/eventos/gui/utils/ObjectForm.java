@@ -9,7 +9,6 @@ import com.sun.lwuit.Form;
 import com.sun.lwuit.events.ActionEvent;
 import com.sun.lwuit.events.ActionListener;
 import com.sun.lwuit.layouts.BoxLayout;
-import com.sun.lwuit.table.TableLayout;
 import java.util.Vector;
 import me.techbot.eventos.gui.HomeMidlet;
 

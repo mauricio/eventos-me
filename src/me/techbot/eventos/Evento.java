@@ -19,11 +19,38 @@ import net.sourceforge.floggy.persistence.PersistableManager;
 public class Evento implements Persistable {
 
     private String nome;
-    private Date dataDeInicio;
-    private Date dataDeTermino;
+    private Date dataDeInicio = new Date();
+    private Date dataDeTermino = new Date();
     private TipoDeEvento tipoDeEvento;
     private Organizador organizador;
 
+    public String toString() {
+        
+        StringBuffer buffer = new StringBuffer();
+        
+        if ( this.nome != null ) {
+            buffer.append( " Nome: " + this.nome );
+        }
+        
+        if ( this.dataDeInicio != null ) {
+            buffer.append( " Data de Início: " + this.dataDeInicio  );
+        }
+        
+        if ( this.dataDeTermino != null ) {
+            buffer.append( " Data de Término: " + this.dataDeTermino );
+        }
+        
+        if ( this.tipoDeEvento != null ) {
+            buffer.append( " Tipo de Evento: " + this.tipoDeEvento );
+        }
+        
+        if ( this.organizador != null ) {
+            buffer.append( " Organizador: " + this.organizador );
+        }
+        
+        return buffer.toString();
+    }
+    
     public Date getDataDeInicio() {
         return dataDeInicio;
     }
@@ -38,10 +65,6 @@ public class Evento implements Persistable {
 
     public void setDataDeTermino(Date dataDeTermino) {
         this.dataDeTermino = dataDeTermino;
-    }
-    
-    public String toString() {
-        return this.getNome();
     }
 
     public String getNome() {
@@ -68,6 +91,13 @@ public class Evento implements Persistable {
         this.tipoDeEvento = tipoDeEvento;
     }
 
+    public int hashCode() {
+        return this.getNome().hashCode();
+    }
+    
+    
+    
+    
     public boolean equals(Object o) {
     
         boolean result = false;

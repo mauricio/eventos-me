@@ -34,6 +34,8 @@ public class EventoForm extends ObjectForm {
 
         this.addTextFields(this.getProperties());
         
+        this.setTextValue( Constantes.NOME , this.evento.getNome());
+        
         this.dataDeInicio = new DateField( "Início" , evento.getDataDeInicio() );
         this.getForm().addComponent( this.dataDeInicio );
         

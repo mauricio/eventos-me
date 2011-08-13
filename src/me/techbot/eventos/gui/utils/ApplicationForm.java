@@ -53,7 +53,6 @@ public class ApplicationForm {
     }    
     
     public String getTextValue( String property ) {
-
         
         TextArea field = (TextArea) this.textFields.get( property );
         return field.getText();

@@ -23,6 +23,9 @@ public class EventoFilter implements Filter {
 
     public boolean matches(Persistable p) {
     
+        System.out.println( "Filtrando de " + this.evento );
+        System.out.println( "Filtrando para " + p );
+        
         Evento outroEvento = (Evento) p;
         
         boolean result = false;
